@@ -10,6 +10,21 @@
 
 :) 
 
+----------------------------------------------
+
+<h4>Install from Github</h4>
+Clone the Repo or Download it.
+use <pre>npm install</pre> in console.
+
+----------------------------------------------
+
+Want to make it for yourself.
+
+<i>change json file</i>
+Happy Coding.
+
+
+
 
 
 
