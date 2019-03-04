@@ -1,0 +1,17 @@
+{
+  "name": "duffer",
+  "version": "1.0.2",
+  "description": "simple resume application ",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "JoshiYogesh",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^6.2.2"
+  },
+  "bin": {
+    "duffer": "./index.js"
+  }
+}

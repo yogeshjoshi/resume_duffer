@@ -1,0 +1,24 @@
+{
+    "Name" : ["Yogesh Chandra Joshi"],
+    "DOB"  : ["January 20, 1996"],
+    "Education" : [
+        "B.Tech from National Institute Of technology, Jalandhar",
+        "Intermediate and Matriculation from SVM, Lucknow"
+    ],
+    "Experience" : [
+        "Envestnet Yodlee - July 2nd 2018 - Present",
+        "Freelancing - October 2018 - Present"
+    ],
+    "Tech Stack" : [
+        "Javascript",
+        "React",
+        "Java",
+        "Python",
+        "DataBase"
+    ],
+    "Projects" : ["visit https://github.com/yogeshjoshi"],
+    "Contact Me" : [
+        "https://www.linkedin.com/in/joshiyogesh001/",
+        "joshiyogesh001@gmail.com"
+    ]
+}
