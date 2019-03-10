@@ -6,47 +6,49 @@ let chalk = require('chalk');
 let prompt = inquirer.createPromptModule();
 
 let response = chalk.bold.red;
-let resume = require('./resume.json');
+let byDefalut = require('./resume.json');
+let byDefalutMsg = 'Wanna know about me?';
 
-let resumePrompts = {
-    type : 'list',
-    name : 'resumeOptions',
-    message : 'Wanna know about me?',
-    choices : [...Object.keys(resume),'Exit']
-}
-
-let main = () =>{
-    console.log('Hello, This is Duffer')
-    resumeHandler();
-}
-
-function resumeHandler(){
-    prompt(resumePrompts).then(answer => {
-        if(answer.resumeOptions == 'Exit'){
-            return
-        }
-
-        let options = answer.resumeOptions;
-
-        console.log(response('--------------------------------------'));
-        resume[`${options}`].forEach(info =>{
-            console.log(response(info))
-        })
-        console.log(response("--------------------------------------"));
-        prompt({
+var object = {
+    resumeHandler : function (resume = byDefalut, msg = byDefalutMsg ) {
+        let resumePrompts = {
             type : 'list',
-            name : 'exitBack',
-            message : 'Go Back or Exit?',
-            choices : ['Go Back', 'Exit']
-        }).then(answer=>{
-            if(answer.exitBack == 'Go Back'){
-            resumeHandler();
+            name : 'resumeOptions',
+            message : msg,
+            choices : [...Object.keys(resume),'Exit']
+        }
+        prompt(resumePrompts).then(answer => {
+            if(answer.resumeOptions == 'Exit'){
+                return
             }
-            else{
-            return;
+    
+            let options = answer.resumeOptions;
+    
+            console.log(response('--------------------------------------'));
+            if(Array.isArray(resume[`${options}`])){
+                resume[`${options}`].forEach(info =>{
+                    console.log(response(info))
+                })
+            }else{
+                if(typeof(resume[`${options}`]) !== 'object')
+                    console.log(resume[`${options}`])
             }
+            console.log(response("--------------------------------------"));
+            prompt({
+                type : 'list',
+                name : 'exitBack',
+                message : 'Go Back or Exit?',
+                choices : ['Go Back', 'Exit']
+            }).then(answer=>{
+                if(answer.exitBack == 'Go Back'){
+                module.exports.resumeHandler(resume);
+                }
+                else{
+                return;
+                }
+            });
         });
-    });
+    }
 }
 
-main();
+module.exports = object;
