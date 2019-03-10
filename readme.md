@@ -29,9 +29,7 @@ Json Format
     "I can show your resume/skills on console"]
 }</pre>
 
-<h1><a href='https://github.com/yogeshjoshi/resume_duffer'>Github Portfolio</a></h1>
-
-<Try It>
+Try It
 <pre>let demo = require('duffer');
 demo.resumeHandler();  
 </pre>
